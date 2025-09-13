@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Space Facts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>Space Facts</span>
+            </div>
+            <div class="nav-links">
+                <a href="#planets">Planets</a>
+                <a href="#stars">Stars</a>
+                <a href="#exploration">Exploration</a>
+                <a href="#facts">Fun Facts</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="stars-bg">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <div class="container">
+            <div class="header-content">
+                <div class="space-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h1>Amazing Space Facts</h1>
+                <p>Discover the wonders and mysteries of our infinite universe</p>
+                <a href="#planets" class="explore-btn">
+                    <i class="fas fa-rocket"></i>
+                    Start Exploring
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="planets" class="planets-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-globe"></i> Our Solar System Planets</h2>
+                    <p class="section-subtitle">Journey through the eight worlds of our cosmic neighborhood</p>
+                </div>
+                <div class="planets-grid">
+                    <div class="planet-card mercury" data-planet="mercury">
+                        <div class="planet-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Mercury</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Closest to Sun</span>
+                            <span class="distance">58M km</span>
+                        </div>
+                        <p>Mercury is the smallest planet in our solar system and the closest to the Sun. A year on Mercury lasts only 88 Earth days, but a day on Mercury lasts 59 Earth days.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>Temperature: -173°C to 427°C</span>
+                        </div>
+                    </div>
+                    
+                    <div class="planet-card venus" data-planet="venus">
+                        <div class="planet-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Venus</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Hottest Planet</span>
+                            <span class="distance">108M km</span>
+                        </div>
+                        <p>Venus is the hottest planet in our solar system with surface temperatures of about 900°F (475°C). It rotates backwards compared to most planets, and a day on Venus is longer than its year.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Rotates backwards</span>
+                        </div>
+                    </div>
+                    
+                    <div class="planet-card earth" data-planet="earth">
+                        <div class="planet-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Earth</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Our Home</span>
+                            <span class="distance">150M km</span>
+                        </div>
+                        <p>Earth is the only known planet with life. It has liquid water on its surface and a protective atmosphere. Earth is about 4.5 billion years old and has one natural satellite - the Moon.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-heart"></i>
+                            <span>Only planet with life</span>
+                        </div>
+                    </div>
+                    
+                    <div class="planet-card mars" data-planet="mars">
+                        <div class="planet-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Mars</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Red Planet</span>
+                            <span class="distance">228M km</span>
+                        </div>
+                        <p>Mars is known as the "Red Planet" due to iron oxide on its surface. It has the largest volcano in the solar system, Olympus Mons, and evidence suggests it once had liquid water.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-mountain"></i>
+                            <span>Largest volcano: Olympus Mons</span>
+                        </div>
+                    </div>
+                    
+                    <div class="planet-card jupiter" data-planet="jupiter">
+                        <div class="planet-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Jupiter</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Gas Giant</span>
+                            <span class="distance">778M km</span>
+                        </div>
+                        <p>Jupiter is the largest planet in our solar system. It has a Great Red Spot, which is a giant storm larger than Earth. Jupiter has over 80 moons, including the four largest discovered by Galileo.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-eye"></i>
+                            <span>Great Red Spot storm</span>
+                        </div>
+                    </div>
+                    
+                    <div class="planet-card saturn" data-planet="saturn">
+                        <div class="planet-icon">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <h3>Saturn</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Ringed Planet</span>
+                            <span class="distance">1.4B km</span>
+                        </div>
+                        <p>Saturn is famous for its beautiful ring system made of ice and rock particles. It's less dense than water, so it would float if there were an ocean big enough to hold it.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-water"></i>
+                            <span>Less dense than water</span>
+                        </div>
+                    </div>
+                    
+                    <div class="planet-card uranus" data-planet="uranus">
+                        <div class="planet-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Uranus</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Ice Giant</span>
+                            <span class="distance">2.9B km</span>
+                        </div>
+                        <p>Uranus rotates on its side, making it unique among planets. It's an ice giant with a tilted axis of 98 degrees and has faint rings that were discovered in 1977.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-redo"></i>
+                            <span>Rotates on its side</span>
+                        </div>
+                    </div>
+                    
+                    <div class="planet-card neptune" data-planet="neptune">
+                        <div class="planet-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Neptune</h3>
+                        <div class="planet-stats">
+                            <span class="stat">Windiest Planet</span>
+                            <span class="distance">4.5B km</span>
+                        </div>
+                        <p>Neptune is the windiest planet with speeds reaching up to 1,200 mph (2,000 km/h). It's the farthest planet from the Sun and takes 165 Earth years to complete one orbit.</p>
+                        <div class="planet-fact">
+                            <i class="fas fa-wind"></i>
+                            <span>Winds up to 2,000 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stars" class="stars-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-star"></i> Stars & Galaxies</h2>
+                    <p class="section-subtitle">Explore the magnificent cosmic structures beyond our solar system</p>
+                </div>
+                <div class="content-grid">
+                    <div class="content-card stars-card">
+                        <div class="card-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Stars</h3>
+                        <div class="card-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-fire"></i>
+                                Nuclear Fusion
+                            </span>
+                        </div>
+                        <p>Stars are massive, glowing balls of gas that produce light and heat through nuclear fusion. Our Sun is a medium-sized star, and there are billions of stars in our galaxy alone. Stars are born in nebulae and can live for millions to billions of years.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="85"></div>
+                            <span>Brightness Level</span>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card galaxy-card">
+                        <div class="card-icon">
+                            <i class="fas fa-galaxy"></i>
+                        </div>
+                        <h3>The Milky Way</h3>
+                        <div class="card-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                100,000 light-years
+                            </span>
+                        </div>
+                        <p>The Milky Way is our home galaxy, containing over 100 billion stars. It's a spiral galaxy about 100,000 light-years across. Our solar system is located in one of the spiral arms, about 26,000 light-years from the galactic center.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="70"></div>
+                            <span>Exploration Progress</span>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card blackhole-card">
+                        <div class="card-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h3>Black Holes</h3>
+                        <div class="card-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                Infinite Gravity
+                            </span>
+                        </div>
+                        <p>Black holes are regions in space where gravity is so strong that nothing, not even light, can escape. They form when massive stars collapse at the end of their lives. The closest black hole to Earth is about 1,000 light-years away.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-width="95"></div>
+                            <span>Mystery Level</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="exploration" class="exploration-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-rocket"></i> Space Exploration</h2>
+                    <p class="section-subtitle">Humanity's journey beyond Earth and into the cosmos</p>
+                </div>
+                <div class="exploration-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Satellites</h3>
+                            <span class="timeline-year">Since 1957</span>
+                            <p>Thousands of satellites orbit Earth, helping us with communication, weather forecasting, GPS navigation, and scientific research. The first artificial satellite, Sputnik 1, was launched by the Soviet Union in 1957.</p>
+                            <div class="achievement-badge">
+                                <i class="fas fa-trophy"></i>
+                                <span>First: Sputnik 1</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Rockets</h3>
+                            <span class="timeline-year">Evolving</span>
+                            <p>Rockets are vehicles that carry spacecraft and astronauts into space. They work by burning fuel and pushing hot gases out of their engines. Modern rockets can be reused, making space travel more affordable.</p>
+                            <div class="achievement-badge">
+                                <i class="fas fa-recycle"></i>
+                                <span>Reusable Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Astronauts</h3>
+                            <span class="timeline-year">Since 1961</span>
+                            <p>Astronauts are specially trained people who travel to space. The first human in space was Yuri Gagarin in 1961, and the first person to walk on the Moon was Neil Armstrong in 1969. Today, astronauts live and work on the International Space Station.</p>
+                            <div class="achievement-badge">
+                                <i class="fas fa-moon"></i>
+                                <span>Moon Landing 1969</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facts" class="fun-facts-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2><i class="fas fa-lightbulb"></i> Mind-Blowing Space Facts</h2>
+                    <p class="section-subtitle">Prepare to be amazed by these incredible cosmic truths</p>
+                </div>
+                <div class="facts-grid">
+                    <div class="fact-card fact-1">
+                        <div class="fact-number">01</div>
+                        <div class="fact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Venus Backwards Day</h3>
+                        <p>A day on Venus (243 Earth days) is actually longer than a year on Venus (225 Earth days) because it rotates so slowly on its axis.</p>
+                        <div class="fact-highlight">
+                            <span>243 days = 1 Venus day</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fact-card fact-2">
+                        <div class="fact-number">02</div>
+                        <div class="fact-icon">
+                            <i class="fas fa-volume-mute"></i>
+                        </div>
+                        <h3>Space Silence</h3>
+                        <p>Space is completely silent because there's no air or atmosphere to carry sound waves. Astronauts must use radios to communicate with each other.</p>
+                        <div class="fact-highlight">
+                            <span>No sound in vacuum</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fact-card fact-3">
+                        <div class="fact-number">03</div>
+                        <div class="fact-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Floating Water</h3>
+                        <p>In the zero gravity of space, water forms perfect spheres and floats around. Astronauts have to be careful when drinking because the water can float away and damage equipment.</p>
+                        <div class="fact-highlight">
+                            <span>Perfect water spheres</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fact-card fact-4">
+                        <div class="fact-number">04</div>
+                        <div class="fact-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Diamond Rain</h3>
+                        <p>Scientists believe it rains diamonds on Jupiter and Saturn. The extreme pressure and carbon in their atmospheres can create diamond particles that fall like rain.</p>
+                        <div class="fact-highlight">
+                            <span>Literal diamond precipitation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fact-card fact-5">
+                        <div class="fact-number">05</div>
+                        <div class="fact-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <h3>Eternal Footprints</h3>
+                        <p>The footprints left by Apollo astronauts on the Moon will last for millions of years because there's no wind or water to erode them away.</p>
+                        <div class="fact-highlight">
+                            <span>Millions of years preserved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Amazing Space Facts</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#planets">Planets</a>
+                    <a href="#stars">Stars</a>
+                    <a href="#exploration">Exploration</a>
+                    <a href="#facts">Facts</a>
+                </div>
+                <div class="footer-text">
+                    <p>This page is for educational purposes only.</p>
+                    <p>Explore the universe with curiosity and wonder.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

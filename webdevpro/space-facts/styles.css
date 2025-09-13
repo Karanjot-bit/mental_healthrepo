@@ -1,0 +1,794 @@
+:root {
+    --space-dark: #0F172A;
+    --space-purple: #4C1D95;
+    --space-light-purple: #6366F1;
+    --star-yellow: #FACC15;
+    --text-light: #E5E7EB;
+    --text-dark: #374151;
+    --card-bg: #FFFFFF;
+    --border-light: #E5E7EB;
+    --gradient-space: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #4C1D95 100%);
+    --gradient-planet: linear-gradient(135deg, #4C1D95 0%, #6366F1 100%);
+    --shadow-glow: 0 0 20px rgba(250, 204, 21, 0.3);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: var(--gradient-space);
+    color: var(--text-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(250, 204, 21, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--star-yellow);
+}
+
+.nav-logo i {
+    font-size: 1.8rem;
+    animation: rocket-float 2s ease-in-out infinite;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.nav-links a:hover {
+    color: var(--star-yellow);
+    background: rgba(250, 204, 21, 0.1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--star-yellow);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--star-yellow);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-space);
+}
+
+.stars-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: var(--star-yellow);
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.star:nth-child(1) { width: 2px; height: 2px; top: 20%; left: 10%; animation-delay: 0s; }
+.star:nth-child(2) { width: 3px; height: 3px; top: 30%; left: 80%; animation-delay: 0.5s; }
+.star:nth-child(3) { width: 1px; height: 1px; top: 60%; left: 20%; animation-delay: 1s; }
+.star:nth-child(4) { width: 2px; height: 2px; top: 80%; left: 70%; animation-delay: 1.5s; }
+.star:nth-child(5) { width: 3px; height: 3px; top: 15%; left: 60%; animation-delay: 2s; }
+.star:nth-child(6) { width: 1px; height: 1px; top: 70%; left: 90%; animation-delay: 2.5s; }
+.star:nth-child(7) { width: 2px; height: 2px; top: 40%; left: 5%; animation-delay: 3s; }
+.star:nth-child(8) { width: 2px; height: 2px; top: 90%; left: 40%; animation-delay: 3.5s; }
+
+.header-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding-top: 70px;
+}
+
+.space-icon {
+    font-size: 5rem;
+    color: var(--star-yellow);
+    margin-bottom: 2rem;
+    animation: planet-rotate 20s linear infinite;
+    filter: drop-shadow(var(--shadow-glow));
+}
+
+.header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--star-yellow) 0%, #FCD34D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(250, 204, 21, 0.5);
+}
+
+.header p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gradient-planet);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.explore-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.explore-btn:hover::before {
+    left: 100%;
+}
+
+main {
+    padding: 80px 0 40px;
+    position: relative;
+}
+
+section {
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    color: var(--star-yellow);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-header h2 i {
+    font-size: 2rem;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.planets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.planet-card {
+    background: var(--card-bg);
+    color: var(--text-dark);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-light);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.planet-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-planet);
+}
+
+.planet-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.planet-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.planet-card:hover .planet-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.mercury .planet-icon { color: #8C7853; }
+.venus .planet-icon { color: #FFC649; }
+.earth .planet-icon { color: #4F94CD; }
+.mars .planet-icon { color: #CD5C5C; }
+.jupiter .planet-icon { color: #D8CA9D; }
+.saturn .planet-icon { color: #FAD5A5; }
+.uranus .planet-icon { color: #4FD0E7; }
+.neptune .planet-icon { color: #4B70DD; }
+
+.planet-card h3 {
+    color: var(--space-purple);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.planet-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 10px 15px;
+    background: rgba(76, 29, 149, 0.1);
+    border-radius: 10px;
+}
+
+.stat {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--space-purple);
+}
+
+.distance {
+    font-size: 0.9rem;
+    color: var(--star-yellow);
+    font-weight: 600;
+}
+
+.planet-card p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.planet-fact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: rgba(250, 204, 21, 0.1);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--space-purple);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.content-card {
+    background: var(--card-bg);
+    color: var(--text-dark);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--star-yellow);
+    animation: float 3s ease-in-out infinite;
+}
+
+.content-card h3 {
+    color: var(--space-purple);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.card-stats {
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--space-light-purple);
+    font-weight: 500;
+}
+
+.progress-bar {
+    margin-top: 1.5rem;
+    position: relative;
+    height: 8px;
+    background: rgba(76, 29, 149, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-planet);
+    border-radius: 4px;
+    transition: width 2s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.progress-bar span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--space-purple);
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.exploration-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.exploration-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gradient-planet);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-planet);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--shadow-card);
+    animation: pulse-icon 3s ease-in-out infinite;
+}
+
+.timeline-content {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 0 2rem;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+}
+
+.timeline-content:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.timeline-content h3 {
+    color: var(--space-purple);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-year {
+    display: inline-block;
+    background: var(--star-yellow);
+    color: var(--space-dark);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.achievement-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    padding: 8px 12px;
+    background: rgba(76, 29, 149, 0.1);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--space-purple);
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.fact-card {
+    background: var(--card-bg);
+    color: var(--text-dark);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+}
+
+.fact-card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: var(--shadow-hover);
+}
+
+.fact-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(76, 29, 149, 0.1);
+}
+
+.fact-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--star-yellow);
+    animation: bounce-icon 2s ease-in-out infinite;
+}
+
+.fact-card h3 {
+    color: var(--space-purple);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.fact-highlight {
+    margin-top: 1.5rem;
+    padding: 10px 15px;
+    background: var(--gradient-planet);
+    color: white;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.footer {
+    background: var(--space-purple);
+    color: white;
+    padding: 3rem 0;
+    margin-top: 80px;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-planet);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--star-yellow);
+}
+
+.footer-logo i {
+    font-size: 1.8rem;
+    animation: rocket-float 2s ease-in-out infinite;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: var(--star-yellow);
+}
+
+.footer-text p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes rocket-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes planet-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.3)); }
+    50% { filter: drop-shadow(0 0 20px rgba(250, 204, 21, 0.6)); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-icon {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
+    50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); }
+}
+
+@keyframes bounce-icon {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header p {
+        font-size: 1.1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .planets-grid,
+    .content-grid,
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .exploration-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: row !important;
+        padding-left: 80px;
+    }
+    
+    .timeline-icon {
+        position: absolute;
+        left: 0;
+    }
+    
+    .timeline-content {
+        margin: 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .space-icon {
+        font-size: 3.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .planet-card,
+    .content-card,
+    .fact-card {
+        padding: 1.8rem;
+    }
+    
+    main {
+        padding: 60px 0 40px;
+    }
+    
+    section {
+        margin-bottom: 60px;
+    }
+}
